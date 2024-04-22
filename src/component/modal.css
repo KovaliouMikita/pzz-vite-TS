@@ -1,0 +1,25 @@
+.modal {
+    background-color: rgba(0,0,0,0.2);
+    
+    position:absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    
+    
+}
+.modal.active{
+    height: 550px;
+    width: 300px;
+   
+    display: inline-flex;
+    transform: scale(1); 
+}
+.modal__content{
+   width: 250px;
+    padding: 20px;
+    border-radius: 12% ;
+    background-color: white;
+    color: black;
+}
