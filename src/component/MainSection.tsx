@@ -1,10 +1,9 @@
 import PizzaSection from "./PizzaSection.jsx";
 import { ProductList } from "../App";
-import { now } from "../App";
 
 interface MainSectionProps {
   onChange: (arg0: string) => void;
-  setIdPzz: (arg0: number) => void;
+  setIdPzz: (arg0: number) => number;
   product: ProductList[];
   setListProduct: (arg0: ProductList[]) => void;
   listProduct: ProductList[];
@@ -23,14 +22,15 @@ export default function MainSection({
 }: MainSectionProps) {
   return (
     <div className="menuSec">
-      {product.map((li: any) => (
+      {product.map((li: ProductList) => (
         <PizzaSection
+          li={li}
           product={product}
           listProduct={listProduct}
           setListProduct={setListProduct}
           onChange={onChange}
           setIdPzz={setIdPzz}
-          key={li.title + `${now}`}
+          key={li.id}
           setTotalPrice={setTotalPrice}
           totalPrice={totalPrice}
           {...li}

@@ -5,13 +5,9 @@ import Modal from "./Modal.js";
 import { ProductList } from "../App";
 
 interface PizzaSectionProps {
-  title: string;
-  discription: [];
-  id: number;
+  li: ProductList;
   onChange: (arg0: string) => void;
   setIdPzz: (arg0: number) => number;
-  image: string;
-  price: number;
   setListProduct: (arg0: ProductList[]) => void;
   listProduct: ProductList[];
   product: ProductList[];
@@ -29,13 +25,9 @@ interface exportDataProp {
 }
 
 export default function PizzaSection({
-  title,
-  discription,
-  id,
+  li,
   onChange,
   setIdPzz,
-  image,
-  price,
   setListProduct,
   listProduct,
   product,
@@ -44,33 +36,33 @@ export default function PizzaSection({
 }: PizzaSectionProps) {
   const [modalActive, setModalActive] = useState(false);
   const [person, setPerson] = useState("1 person");
-  const [pricePizza, setPricePizza] = useState(price * 1);
+  const [pricePizza, setPricePizza] = useState(li.price * 1);
 
-  function exportData(obj: exportDataProp, extaPlus: number) {
+  function exportData(obj: exportDataProp) {
     return {
       title: obj.title,
       discription: obj.discription,
       id: obj.id,
       image: obj.image,
       price: pricePizza,
-      countPizza: 1 + extaPlus,
+      countPizza: 1,
     };
   }
 
   return (
     <div className="Pizzasection">
       <Modal
-        discription={discription}
+        discription={li.discription}
         active={modalActive}
         setActive={setModalActive}
       />
 
       <div className="space-between">
         <img
-          src={image}
+          src={li.image}
           alt="image"
           onClick={() => {
-            setIdPzz(id);
+            setIdPzz(li.id);
             onChange("ProductPage");
           }}
         />
@@ -82,16 +74,16 @@ export default function PizzaSection({
       </p>
 
       <p>
-        {title} id={id}
+        {li.title} id={li.id}
       </p>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {discription.map((p: any) => (
+        {li.discription.map((p: any) => (
           <p key={p}>{p}</p>
         ))}
       </div>
 
       <SizeButton
-        price={price}
+        price={li.price}
         pricePizza={pricePizza}
         setPricePizza={(current) => setPricePizza(current)}
         onChange={setPerson}
@@ -101,13 +93,13 @@ export default function PizzaSection({
       <div className="space-between">
         <Button
           onClick={() => {
-            const item = listProduct.find((i) => i.id === id);
+            const item = listProduct.find((i) => i.id === li.id);
             if (item != null) {
               item.countPizza += 1;
               setListProduct([...listProduct]);
               setTotalPrice(totalPrice + pricePizza);
             } else {
-              setListProduct([...listProduct, exportData(product[id - 1], 0)]);
+              setListProduct([...listProduct, exportData(product[li.id - 1])]);
               setTotalPrice(totalPrice + pricePizza);
             }
           }}
