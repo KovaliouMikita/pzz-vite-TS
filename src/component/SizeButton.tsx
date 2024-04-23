@@ -14,7 +14,7 @@ export default function SizeButton({
   price,
 }: SizeBottonProps) {
   const [activeT, notActiveT] = useState("a");
-  const [active, notActive] = useState("0");
+  const [active, notActive] = useState("1");
   const [isToggled, setIsToggled] = useState(false);
 
   function handleClickT(type: string) {
@@ -91,7 +91,7 @@ export default function SizeButton({
         >
           45cm
         </Button>
-        {active === "1" && (
+        {active === "2" && (
           <Button
             isActive={isToggled === true}
             onClick={() => {
