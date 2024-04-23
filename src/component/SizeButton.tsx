@@ -79,7 +79,7 @@ export default function SizeButton({
             handleChange();
           }}
         >
-          32cm
+          35cm
         </Button>
         <Button
           isActive={active === "4"}
@@ -91,7 +91,7 @@ export default function SizeButton({
         >
           45cm
         </Button>
-        {active === "1" && (
+        {active === "2" && (
           <Button
             isActive={isToggled === true}
             onClick={() => {
