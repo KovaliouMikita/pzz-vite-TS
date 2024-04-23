@@ -15,7 +15,7 @@ export interface ProductList {
   price: number;
   countPizza: number;
 }
-
+// comment
 export default function App() {
   const apiUrl = "https://65f289a0034bdbecc7650c09.mockapi.io/food";
   const [activeSection, setActiveSection] = useState("main");
