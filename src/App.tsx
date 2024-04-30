@@ -41,7 +41,6 @@ export default function App() {
       .map((p) => p.price * p.countPizza);
     for (let i in a) {
       x += a[i];
-      console.log(a[i]);
     }
     setTotalPrice(x);
   };
