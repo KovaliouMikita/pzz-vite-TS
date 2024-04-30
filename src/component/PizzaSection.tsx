@@ -7,7 +7,7 @@ import { ProductList } from "../App";
 interface PizzaSectionProps {
   li: ProductList;
   onChange: (arg0: string) => void;
-  setIdPzz: (arg0: number) => number;
+  setIdPzz: (arg0: number) => void;
   setListProduct: (arg0: ProductList[]) => void;
   listProduct: ProductList[];
   product: ProductList[];

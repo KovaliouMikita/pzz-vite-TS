@@ -3,7 +3,7 @@ import { ProductList } from "../App";
 
 interface MainSectionProps {
   onChange: (arg0: string) => void;
-  setIdPzz: (arg0: number) => number;
+  setIdPzz: (arg0: number) => void;
   product: ProductList[];
   setListProduct: (arg0: ProductList[]) => void;
   listProduct: ProductList[];
