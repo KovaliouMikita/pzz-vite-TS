@@ -34,7 +34,7 @@ export default function OrderBucketList({
         <div style={{ display: "flex" }}>
           <Button
             onClick={function () {
-              updateCount(li.countPizza - 1, li.id);
+              updateCount(li, li.countPizza - 1);
               onChange(-li.price);
             }}
           >
@@ -44,7 +44,7 @@ export default function OrderBucketList({
 
           <Button
             onClick={function () {
-              updateCount(li.countPizza + 1, li.id);
+              updateCount(li, li.countPizza + 1);
               onChange(+li.price);
             }}
           >

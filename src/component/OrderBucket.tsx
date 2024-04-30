@@ -21,12 +21,12 @@ export default function OrderBucket({
   remove,
 }: OrderBucketProps) {
   const updateCount = useCallback(
-    (product: ProductList) => {
+    (product: ProductList, set: number) => {
       const item = listProduct.find(
         (i) => i.price === product.price || i.id === product.id
       );
       if (item != null) {
-        item.countPizza = product.countPizza;
+        item.countPizza = set;
         setListProduct([...listProduct]);
       }
     },
