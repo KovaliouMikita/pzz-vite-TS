@@ -75,8 +75,10 @@ export default function App() {
       {activeSection === "ProductPage" && (
         <div className=" ProdSec">
           <ProductPage
-            {...product[idPzz - 1]}
+            li={product[idPzz - 1]}
             product={product}
+            setTotalPrice={setTotalPrice}
+            totalPrice={totalPrice}
             listProduct={listProduct}
             setListProduct={setListProduct}
             onChange={setActiveSection}

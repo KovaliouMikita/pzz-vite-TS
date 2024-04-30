@@ -93,7 +93,7 @@ export default function PizzaSection({
       <div className="space-between">
         <Button
           onClick={() => {
-            const item = listProduct.find((i) => i.id === li.id);
+            const item = listProduct.find((i) => i.price === pricePizza);
             if (item != null) {
               item.countPizza += 1;
               setListProduct([...listProduct]);
