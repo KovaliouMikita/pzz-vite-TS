@@ -52,6 +52,7 @@ export default function PizzaSection({
   return (
     <div className="Pizzasection">
       <Modal
+        li={li}
         discription={li.discription}
         active={modalActive}
         setActive={setModalActive}

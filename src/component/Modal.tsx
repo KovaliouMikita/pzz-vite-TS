@@ -1,15 +1,17 @@
+import { ProductList } from "../App.js";
 import Button from "./Button.js";
 import "./modal.css";
 import { Fragment } from "react";
 
 interface ModalProps {
+  li: ProductList;
   active: boolean;
   setActive: (arg0: boolean) => void;
   discription: [];
 }
 
 export default function Modal({ active, setActive, discription }: ModalProps) {
-  function f(pi: any) {
+  function f(pi: never) {
     console.log(pi);
   }
 
@@ -17,7 +19,7 @@ export default function Modal({ active, setActive, discription }: ModalProps) {
     <Fragment>
       <div className={active ? "modal active" : "modal"}>
         <div className="modal__content">
-          {discription.map((p: any) => (
+          {discription.map((p: never) => (
             <div
               key={p}
               style={{ display: "flex", justifyContent: "space-between" }}

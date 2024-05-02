@@ -30,7 +30,7 @@ export default function MainSection({
           setListProduct={setListProduct}
           onChange={onChange}
           setIdPzz={setIdPzz}
-          key={li.id}
+          key={li.id + li.price}
           setTotalPrice={setTotalPrice}
           totalPrice={totalPrice}
           {...li}

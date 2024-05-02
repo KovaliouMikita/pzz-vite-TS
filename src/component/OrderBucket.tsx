@@ -42,7 +42,7 @@ export default function OrderBucket({
             li={li}
             remove={remove}
             updateCount={updateCount}
-            key={li.id}
+            key={li.id + li.price}
             onChange={(current: number) => setTotalPrice(totalPrice + current)}
           />
         ))}
